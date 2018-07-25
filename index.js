@@ -39,7 +39,7 @@ app.use(parser.json());
         res.header('Access-Control-Allow-Origin', '*');
         res.header('Access-Control-Allow-Methods', 'GET');
         res.header('Access-Control-Allow-Headers', 'Content-Type');
-        client.api(`/users/${req.params.email}/events`).get((err, msres) => {
+        client.api(`/users/${req.params.email}/events?$top=50`).get((err, msres) => {
             console.log(err);
             res.send(msres);
         });
